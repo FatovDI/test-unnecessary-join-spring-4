@@ -27,7 +27,7 @@ public class Contract {
     @Column(name = "number")
     private String number;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "abonent", referencedColumnName = "code")
     private Abonent abonent;
 }
