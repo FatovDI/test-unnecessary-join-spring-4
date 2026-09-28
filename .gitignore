@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Spring Data JPA source fork (not part of this reproducer)
+spring-data-jpa/
+
+# Issue/PR drafts (not part of this reproducer)
+docs/
+
+# OS
+.DS_Store
+
+# Backup files
+*.javabak
