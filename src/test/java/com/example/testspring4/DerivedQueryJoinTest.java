@@ -25,7 +25,7 @@ class DerivedQueryJoinTest {
 
 	@Test
 	@Transactional
-	void derivedQueryByAbonentCode_emitsLeftJoin() {
+	void derivedQueryByAbonentCode_filtersOnFkColumnWithoutJoin() {
 		createAbonentAndContract();
 
 		SqlStatementCapture.clear();
@@ -36,7 +36,7 @@ class DerivedQueryJoinTest {
 		String sql = SqlStatementCapture.firstContaining("from contracts");
 		System.out.println("[derived findByAbonentCode] " + sql);
 		assertThat(sql).as("derived query SQL").isNotNull();
-		assertThat(sql).containsIgnoringCase("left join");
+		assertThat(sql).doesNotContainIgnoringCase("join");
 	}
 
 	@Test
