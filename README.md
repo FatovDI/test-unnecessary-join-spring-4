@@ -20,7 +20,7 @@ class Contract {
     @Id @GeneratedValue Long id;
     @Column String number;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "abonent", referencedColumnName = "code")
     Abonent abonent;
 }
